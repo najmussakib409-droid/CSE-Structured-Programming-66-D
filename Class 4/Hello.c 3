@@ -1,0 +1,24 @@
+#include <stdio.h>
+double calculateBill(int units, double ratePerUnit, char connectionType) {
+    double baseAmount = units * ratePerUnit;
+
+    //Commercial connection ('C') incur a 15% service surchange
+    if (connectionType == 'C' || connectionType == 'C' ) {
+        return baseAmount + (baseAmount * 0.15);
+    }
+    return baseAmount;
+}
+int main () {
+    int unitsUsed;
+    double rate;
+    char type;
+
+
+    scanf("%d %lf %c" , &unitsUsed, &rate, &type); // e.g., 250 7.5 c
+
+    double payable = calculateBill(unitsUsed, rate, type);
+    printf("Total payable Bil = %.2lf BDT\n", payable);
+    
+    return 0;
+
+    }
